@@ -1,5 +1,7 @@
 import React from "react";
-const Header = () =>{
+
+const SideNav = () =>{
+
     return(
         <div>
             this is  Side nav
@@ -7,4 +9,4 @@ const Header = () =>{
     )
 }
 
-export default Header;
+export default SideNav;
