@@ -1,10 +1,14 @@
 import React from 'react';
+import Header from '../component/Header';
+import Sidebar from './Sidebar';
 
 const Home = () =>{
-
+    console.log("gfjgfhjadsgfsfdhj")
     return(
         <div className=''>
-            this  is home page svbasdvasda
+            Hello
+            <Header />
+            <Sidebar />
         </div>
     )
 }

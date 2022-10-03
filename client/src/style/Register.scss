@@ -1,0 +1,38 @@
+.left-side {
+  height: 100vh;
+  position: relative;
+
+  .register-logo {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 236px;
+    height: 96px;
+  }
+}
+
+.register-user-card{
+    height: 150px;
+    .card-icon {
+        background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        opacity: 1;
+        height: 60px;
+        width: 60px;
+        border-radius: 100%;
+        margin: auto;
+        margin-top: -45px;
+        padding: 15px 15px;
+    }
+    .register-now-btn{
+        margin-bottom: -100px;
+    }
+
+}
+
+.second-row {
+    margin-top: 70px;
+}

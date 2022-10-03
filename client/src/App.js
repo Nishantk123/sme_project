@@ -3,7 +3,7 @@ import "./style/App.scss";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 
 const LoginComponent = React.lazy(() => import("./views/Login"));
-const RegisterComponent = React.lazy(() => import("./views/Register"));
+const RegisterComponent = React.lazy(() => import("./views/register/Register"));
 const HomeComponent = React.lazy(() => import("./views/Home"));
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginComponent />} />
-        <Route path="/Register" element={<RegisterComponent />} />
+        <Route path="/register" element={<RegisterComponent />} />
         <Route path="/" element={<HomeComponent />} />
       </Routes>
     </BrowserRouter>
