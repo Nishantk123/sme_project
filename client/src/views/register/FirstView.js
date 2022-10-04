@@ -48,7 +48,7 @@ const FirstView = ({handleSelect}) =>{
                         <img src={user} />
                       </div>
                       <h5 className="text-primary text-center my-3">
-                        I AM A AGENT
+                        I AM AN AGENT
                       </h5>
                       <div className="text-center">
                         <button className="btn btn-primary register-now-btn" onClick={()=>handleSelect("agent")}>
@@ -84,7 +84,7 @@ const FirstView = ({handleSelect}) =>{
                         <img src={user} />
                       </div>
                       <h5 className="text-primary text-center my-3">
-                        I AM A ADMIN
+                        I AM A CLIENT ADMIN
                       </h5>
                       <div className="text-center">
                         <button className="btn btn-primary register-now-btn" onClick={()=>handleSelect("admin")}>
