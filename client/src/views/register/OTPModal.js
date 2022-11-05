@@ -30,7 +30,7 @@ const OTPModal = ({ open, closeModal, isVerified = false ,handleSubmit, handleVe
         <div>
           <h4 className="text-dark text-center">Thank You</h4>
           <div className="text-center text-gray">
-            <small>YOUR MOBILE NUMBER VERIFY </small>
+            <small>YOUR NUMBER HAS BEN VERIFIED </small>
           </div>
           <div className="text-center text-gray">
             <small>+919898989898</small>

@@ -1,6 +1,6 @@
 .left-side {
   height: 100vh;
-  position: relative;
+  // position: relative;
 
   .register-logo {
     position: absolute;
@@ -14,7 +14,7 @@
 }
 
 .register-user-card{
-    height: 150px;
+    height: 200px;
     .card-icon {
         background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
         background: #ffffff 0% 0% no-repeat padding-box;
@@ -25,10 +25,10 @@
         border-radius: 100%;
         margin: auto;
         margin-top: -45px;
-        padding: 15px 15px;
+        padding: 10px 10px;
     }
     .register-now-btn{
-        margin-bottom: -100px;
+        margin-bottom: -90px;
     }
 
 }

@@ -6,11 +6,27 @@
 body{
     background-color: #f2f2f2 !important;
 }
+.login_left_side{
+  background: url("../assets/img/vicino_sidebar.png")
+      no-repeat;
+      // background-size: contain;
+      background-repeat: no-repeat;
+}
+.cursor_pointer{
+  cursor: pointer!important;
+}
+.screen_center{
+  position: fixed;
+  top: 50%;
+  // left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
 .text-primary {
-    color: #667700 !important;
+    color: #0074BB !important;
   }
   .bg-primary {
-    background-color: #667700 !important;
+    background-color: #0074BB !important;
   }
   .text-dark {
     color: #000033 !important;
@@ -44,10 +60,10 @@ body{
     // padding: 10px 50px;
   }
   .btn-primary {
-    background-color: #667700 !important;
+    background-color: #0074BB !important;
     color: #ffffff !important;
     :focus{
-      border-color: #667700 !important;
+      border-color: #0074BB !important;
     }
   }
   .card{
@@ -82,7 +98,7 @@ body{
 
   .tab-active{
     margin-right: 20px;
-    color: #667700;
+    color: #0074BB;
     text-decoration: underline;
     cursor: pointer;
   }
@@ -167,7 +183,7 @@ body{
   }
   
   .navbar2 {
-    background-color: #667700;
+    background-color: #0074BB;
     min-height: 60px;
   }
   .navsettingsicon {
@@ -309,7 +325,7 @@ body{
   
   .demographic {
     font-size: small;
-    color: #667700;
+    color: #0074BB;
     margin: 0px;
   }
   .published {
@@ -323,7 +339,7 @@ body{
   }
   
   .cardfooterdata {
-    color: #667700;
+    color: #0074BB;
     padding: 0px;
     margin: 0px;
     font-size: small;
