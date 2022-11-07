@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const http = require("http");
 const userRouter = require("./routes/user-routes")
+const otpRouter = require("./routes/otp-routes");
+const mailRouter = require("./routes/mail-routes")
 require("dotenv").config();
 require("./config/database").connect();
 
@@ -17,7 +19,9 @@ const corsOpts = {
 };
 app.use(cors(corsOpts));
 
-app.use("/user",userRouter)
+app.use("/user", userRouter)
+app.use("/otp", otpRouter)
+app.use("/mail", mailRouter)
 
 const server = http.createServer(app);
 const { API_PORT } = process.env;

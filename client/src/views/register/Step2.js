@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 
-const Step2 = ({ handleStep }) => {
+const Step2 = ({ handleStep, handleDataChange, register_data }) => {
   const [active_tab, setActiveTab] = useState("COMPANY REGISTRATION");
   const tabs = [
     "COMPANY REGISTRATION",
@@ -39,40 +39,122 @@ const Step2 = ({ handleStep }) => {
   const getCompanyAddressUI = () => {
     return (
       <div>
-        <h3>Company Address</h3>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control custom-input"
-            id="floatingInput"
-          />
-          <label for="floatingInput">Address line 1</label>
+        <div className="row">
+          <div className="col-sm-6">
+            <h4>Company Address</h4>
+            <div>Provide Your Registered Company Address</div>
+            <div className="">
+              <label for="floatingInput">Address line 1</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.c_address1}
+              
+                onChange={(e) => handleDataChange(e, "c_address1")}
+              />
+            </div>
+            <div className="">
+              <label for="floatingInput">Address line 2 (Optional)</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.c_address2}
+
+                onChange={(e) => handleDataChange(e, "c_address2")}
+              />
+            </div>
+            <div className="">
+              <label for="floatingInput">Landmark (Optional)</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.c_landmark}
+                onChange={(e) => handleDataChange(e, "c_landmark")}
+              />
+            </div>
+            <div className="">
+              <label for="floatingInput">City / Town</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.c_city}
+                onChange={(e) => handleDataChange(e, "c_city")}
+              />
+            </div>
+            <div className="">
+              <label for="floatingInput">Select a state</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.c_state}
+                
+                onChange={(e) => handleDataChange(e, "c_state")}
+              />
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <h4>Billing Address</h4>
+            <input type="checkbox"  onChange={(e)=>handleDataChange(e,"same_address")}/> Same As Registered Aaddress
+            <div className="">
+              <label for="floatingInput">Address line 1</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.b_address1}
+                onChange={(e) => handleDataChange(e, "b_address1")}
+              />
+            </div>
+            <div className="">
+              <label for="floatingInput">Address line 2 (Optional)</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.b_address2}
+                onChange={(e) => handleDataChange(e, "b_address2")}
+              />
+            </div>
+            <div className="">
+              <label for="floatingInput">Landmark (Optional)</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.b_landmark}
+
+                onChange={(e) => handleDataChange(e, "b_landmark")}
+              />
+            </div>
+            <div className="">
+              <label for="floatingInput">City / Town</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.b_city}
+                onChange={(e) => handleDataChange(e, "b_city")}
+              />
+            </div>
+            <div className="">
+              <label for="floatingInput">Select a state</label>
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="floatingInput"
+                value={register_data.b_state}
+                onChange={(e) => handleDataChange(e, "b_state")}
+              />
+            </div>
+          </div>
         </div>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control custom-input"
-            id="floatingInput"
-          />
-          <label for="floatingInput">Address line 2 (Optional)</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control custom-input"
-            id="floatingInput"
-          />
-          <label for="floatingInput">Landmark(Optional)</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control custom-input"
-            id="floatingInput"
-          />
-          <label for="floatingInput">Select State</label>
-        </div>
-        <div>
+
+        <div className="mt-3">
           <button
             className="btn btn-primary"
             onClick={() => handleNext("COMPANY GENERAL PROFILE")}
@@ -106,6 +188,13 @@ const Step2 = ({ handleStep }) => {
         <div class="mb-2">
           <label for="floatingInput">CIN Number(Optional)</label>
           <input type="email" class="form-control mt-1" id="floatingInput" />
+        </div>
+        <div className="mb-2">
+          <label for="floatingInput">MSME</label>
+          <div className="">
+            <input type="radio" /> Yes
+            <input type="radio" className="ms-3" /> No
+          </div>
         </div>
         <div class="mb-2">
           <label for="floatingInput">PAN Number</label>
@@ -211,7 +300,7 @@ const Step2 = ({ handleStep }) => {
       <div className="row justify-content-center">
         <div className="col-sm-10">
           <div className="row">
-            <div className="col-sm-8">
+            <div className="col-sm-10">
               <div className="tab-container d-flex my-3">
                 {tabs.map((d, index) => {
                   return (

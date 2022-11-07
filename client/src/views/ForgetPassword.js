@@ -1,18 +1,18 @@
 import React from "react";
 import logo from "../assets/img/logo.png";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const ForgetPassword = () => {
-  const history = useNavigate();
+  const history = useHistory();
 
-  const handleSignUp = () => {
-    history("/register");
+  const handleLogin = () => {
+    history.push("/login");
   };
   return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-sm-4 col-md-4 col-lg-3 bg-dark left-side login_left_side">
-          <img className="register-logo" src={logo} />
+          {/* <img className="register-logo" src={logo} /> */}
         </div>
         <div className="col-sm-8 col-md-8 col-lg-9">
           <div className="row justify-content-center">
@@ -25,7 +25,7 @@ const ForgetPassword = () => {
               <div className="">
                 <button className="btn btn-primary w-100 my-3">Reset Password</button>
               </div>
-              <div className="my-3 d-flex justify-content-center text-primary cursor_pointer">
+              <div className="my-3 d-flex justify-content-center text-primary cursor_pointer" onClick={handleLogin}>
                 Return To Login
               </div>
             </div>

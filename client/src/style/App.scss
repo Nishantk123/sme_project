@@ -1,21 +1,21 @@
 @import url("./Login.scss");
 @import url("./Header.scss");
 @import url("./Register.scss");
+@import url("./custom.scss");
+// @import '~bootstrap/scss/bootstrap.scss';
 
-
-body{
-    background-color: #f2f2f2 !important;
+body {
+  background-color: #f2f2f2 !important;
 }
-.login_left_side{
-  background: url("../assets/img/vicino_sidebar.png")
-      no-repeat;
-      // background-size: contain;
-      background-repeat: no-repeat;
+.login_left_side {
+  background: url("../assets/img/vicino_sidebar.png") no-repeat;
+  // background-size: contain;
+  background-repeat: no-repeat;
 }
-.cursor_pointer{
-  cursor: pointer!important;
+.cursor_pointer {
+  cursor: pointer !important;
 }
-.screen_center{
+.screen_center {
   position: fixed;
   top: 50%;
   // left: 50%;
@@ -23,363 +23,395 @@ body{
   transform: translate(-50%, -50%);
 }
 .text-primary {
-    color: #0074BB !important;
-  }
-  .bg-primary {
-    background-color: #0074BB !important;
-  }
-  .text-dark {
-    color: #000033 !important;
-  }
-  
-  .bg-dark {
-    background-color: #000033 !important;
-  }
-  
-  .text-light {
-    color: #f2f2f2 !important;
-  }
-  .bg-light {
-    background-color: #f2f2f2 !important;
-  }
-  
-  .text-secondary {
-    color: #00000029 !important;
-  }
-  .bg-secondary {
-    background-color: #00000029 !important;
-  }
-  
-  .text-gray {
-    color: #777777 !important;
-  }
-  .bg-gray {
-    background-color: #777777 !important;
-  }
-  .btn{
-    // padding: 10px 50px;
-  }
-  .btn-primary {
-    background-color: #0074BB !important;
-    color: #ffffff !important;
-    :focus{
-      border-color: #0074BB !important;
-    }
-  }
-  .card{
-    box-shadow: 0px 3px 6px #00000029 !important;
-  }
+  color: #0074bb !important;
+}
+.bg-primary {
+  background-color: #0074bb !important;
+}
+.text-dark {
+  color: #000033 !important;
+}
 
-  .custom-input{
-    border: unset !important;
-    box-shadow: unset !important;
-    background-color: transparent !important;
-    border-bottom: 1px solid black !important;
-    border-radius: unset !important;
+.bg-dark {
+  background-color: #000033 !important;
+}
+
+.text-light {
+  color: #f2f2f2 !important;
+}
+.bg-light {
+  background-color: #f2f2f2 !important;
+}
+
+.text-secondary {
+  color: #00000029 !important;
+}
+.bg-secondary {
+  background-color: #00000029 !important;
+}
+
+.text-gray {
+  color: #777777 !important;
+}
+.bg-gray {
+  background-color: #777777 !important;
+}
+.btn {
+  // padding: 10px 50px;
+}
+.btn-primary {
+  background-color: #0074bb !important;
+  color: #ffffff !important;
+  :focus {
+    border-color: #0074bb !important;
   }
-  .form-floating{
-    label{
-      padding: 1rem 0rem !important;
-    }
+}
+.card {
+  box-shadow: 0px 3px 6px #00000029 !important;
+}
+
+.custom-input {
+  border: unset !important;
+  box-shadow: unset !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid black !important;
+  border-radius: unset !important;
+}
+.form-floating {
+  label {
+    padding: 1rem 0rem !important;
   }
-  
-  .opt-data{
-    width: 100%;
-    input{
+}
+
+.opt-data {
+  width: 100%;
+  input {
     width: 100% !important;
+  }
+}
 
-    }
-  }
+.tab {
+  margin-right: 20px;
+  cursor: pointer;
+}
 
-  .tab{
-    margin-right: 20px;
-    cursor: pointer;
-  }
+.tab-active {
+  margin-right: 20px;
+  color: #0074bb;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
-  .tab-active{
-    margin-right: 20px;
-    color: #0074BB;
-    text-decoration: underline;
-    cursor: pointer;
-  }
+.header {
+  background-color: #0e0e5e !important;
+}
 
+.navbar-brand {
+  // color: yellow;
+  margin-left: 40px;
+}
 
+.searchinput {
+  padding-left: 25px;
+  background: url("https://static.thenounproject.com/png/101791-200.png")
+    no-repeat left;
+  background-size: 20px;
+  background-position-x: 3px;
+  margin-left: 20px;
+  width: 75%;
+  border: 0px;
+}
+.navmaxicon {
+  width: 20px;
+  height: 20px;
 
+  margin-right: 20px;
+}
 
+.navbellicon {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
 
+.header1 {
+  justify-content: left !important;
+}
+.profileicon {
+  width: 30px;
+  height: 30px;
+}
 
+.buttonheader {
+  // margin-right: 20px;
+  background-color: #0074bb !important;
+  width: 100%;
+}
 
+.topbtn {
+  background-color: #0e0e5e;
+  border: 0px;
+}
 
+.navbellicon {
+  background-color: #0e0e5e;
+}
 
+.navbar2 {
+  background-color: #0074bb;
+  min-height: 60px;
+}
+.navsettingsicon {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  margin-right: 80px;
+}
+.header2content {
+  text-align: right;
+}
 
+.header2 {
+  padding-top: 15px;
+  max-width: 150%;
+}
+.colorwhite {
+  color: white;
+}
+.sidebarprofimg {
+  width: 50px;
+  height: 50px;
+  align-items: center;
+}
+.administrator {
+  font-size: small;
+  margin-bottom: 20px;
+}
+.sidedashimg {
+  width: 20px;
+  height: 20px;
+}
+.sidearrowimg {
+  height: 10px;
+  width: 10px;
+  margin-top: 5px;
+  margin-left: 39px;
+}
+.joblist {
+  font-size: small;
+  margin-bottom: 20px;
+  margin-left: 34px;
+}
 
+.sidebar {
+  /* margin-left: 50px; */
+  min-width: 200px;
+  position: relative;
+  bottom: 50px;
+}
 
+.sideview {
+  height: 110vh;
+}
+.select {
+  width: 100px;
+  height: 30px;
+  margin-top: px;
+  padding-left: 5px;
+  padding-top: 2px;
+  font-size: small;
+}
+.cardbodytop {
+  /* height: 50px; */
+  padding: 9px;
+}
+.toprow {
+  justify-content: center;
+}
 
+.searchtop {
+  width: 150px;
+  height: 30px;
+  margin-top: 0px;
+  font-size: small;
+  padding-left: 25px;
+  background: url("https://static.thenounproject.com/png/101791-200.png")
+    no-repeat left;
+  background-size: 20px;
+  background-position-x: 3px;
+  margin-left: 20px;
+  width: 75%;
+}
 
+.topcontimage {
+  width: 20px;
+  height: 20px;
+  margin-right: 9px;
+}
 
+.createjobbtn {
+  background-color: green;
+  color: white;
+  height: 35px;
+  padding-right: 12px;
+  padding-top: 5px;
+  font-size: small;
+}
+.maincontent {
+  background-color: #e1e1e1;
+}
 
+.cardimage {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
 
+.cardfooter {
+  height: 35px;
+}
 
+.activecolor {
+  background-color: green;
+  margin: 0px;
+  padding: 0px;
+  padding-top: px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.new {
+  font-size: xx-small;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 2px;
+}
 
+.cardlogo {
+  width: 70px;
+  height: 70px;
+  margin: 20px;
+}
 
+.topediticon {
+  width: 15px;
+  height: 15px;
+}
 
+.demographic {
+  font-size: small;
+  color: #0074bb;
+  margin: 0px;
+}
+.published {
+  font-size: x-small;
+  opacity: 0.5;
+  margin: 0px;
+}
 
+.location {
+  font-size: x-small;
+}
 
+.cardfooterdata {
+  color: #0074bb;
+  padding: 0px;
+  margin: 0px;
+  font-size: small;
+}
 
-
-
-  .header {
-    background-color: #0e0e5e !important;
-  }
-  
-  .navbar-brand {
-    color: yellow;
-    margin-left: 40px;
-  }
-  
-  .searchinput {
-    padding-left: 25px;
-    background: url("https://static.thenounproject.com/png/101791-200.png")
-      no-repeat left;
-    background-size: 20px;
-    background-position-x: 3px;
-    margin-left: 20px;
-    width: 75%;
-    border: 0px;
-  }
-  .navmaxicon {
-    width: 20px;
-    height: 20px;
-  
-    margin-right: 20px;
-  }
-  
-  .navbellicon {
-    background-color: white;
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-  }
-  
-  .header1 {
-    justify-content: left !important;
-  }
-  .profileicon {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .buttonheader {
-    margin-right: 20px;
-  }
-  
-  .topbtn {
-    background-color: #0e0e5e;
-    border: 0px;
-  }
-  
-  .navbellicon {
-    background-color: #0e0e5e;
-  }
-  
-  .navbar2 {
-    background-color: #0074BB;
-    min-height: 60px;
-  }
-  .navsettingsicon {
-    background-color: white;
-    width: 20px;
-    height: 20px;
-    margin-right: 80px;
-  }
-  .header2content {
-    text-align: right;
-  }
-  
-  .header2 {
-    padding-top: 15px;
-    max-width: 150%;
-  }
-  .colorwhite {
-    color: white;
-  }
-  .sidebarprofimg {
-    width: 50px;
-    height: 50px;
-    align-items: center;
-  }
-  .administrator {
-    font-size: small;
-    margin-bottom: 20px;
-  }
-  .sidedashimg {
-    width: 20px;
-    height: 20px;
-  }
-  .sidearrowimg {
-    height: 10px;
-    width: 10px;
-    margin-top: 5px;
-    margin-left: 39px;
-  }
-  .joblist {
-    font-size: small;
-    margin-bottom: 20px;
-    margin-left: 34px;
-  }
-  
-  .sidebar {
-    /* margin-left: 50px; */
-    min-width: 200px;
-    position: relative;
-    bottom: 50px;
-  }
-  
-  .sideview {
-    height: 110vh;
-  }
-  .select {
-    width: 100px;
-    height: 30px;
-    margin-top: px;
-    padding-left: 5px;
-    padding-top: 2px;
-    font-size: small;
-  }
-  .cardbodytop {
-    /* height: 50px; */
-    padding: 9px;
-  }
-  .toprow {
-    justify-content: center;
-  }
-  
-  .searchtop {
-    width: 150px;
-    height: 30px;
-    margin-top: 0px;
-    font-size: small;
-    padding-left: 25px;
-    background: url("https://static.thenounproject.com/png/101791-200.png")
-      no-repeat left;
-    background-size: 20px;
-    background-position-x: 3px;
-    margin-left: 20px;
-    width: 75%;
-  }
-  
-  .topcontimage {
-    width: 20px;
-    height: 20px;
-    margin-right: 9px;
-  }
-  
-  .createjobbtn {
-    background-color: green;
-    color: white;
-    height: 35px;
-    padding-right: 12px;
-    padding-top: 5px;
-    font-size: small;
-  }
-  .maincontent {
-    background-color: #e1e1e1;
-  }
-  
-  .cardimage {
-    width: 16px;
-    height: 16px;
-    margin-top: 2px;
-  }
-  
-  .cardfooter {
-    height: 35px;
-  }
-  
-  .activecolor {
-    background-color: green;
-    margin: 0px;
-    padding: 0px;
-    padding-top: px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-  .new {
-    font-size: xx-small;
-    padding: 0px;
-    margin: 0px;
-    margin-left: 2px;
-  }
-  
-  .cardlogo {
-    width: 70px;
-    height: 70px;
-    margin: 20px;
-  }
-  
-  .topediticon {
-    width: 15px;
-    height: 15px;
-  }
-  
-  .demographic {
-    font-size: small;
-    color: #0074BB;
-    margin: 0px;
-  }
-  .published {
-    font-size: x-small;
-    opacity: 0.5;
-    margin: 0px;
-  }
-  
-  .location {
-    font-size: x-small;
-  }
-  
-  .cardfooterdata {
-    color: #0074BB;
-    padding: 0px;
-    margin: 0px;
-    font-size: small;
-  }
-  
-  /* .bottomcontainer {
+/* .bottomcontainer {
     height: 40px;
   } */
-  
-  .bottomarrow {
-    height: 17px;
-    width: 17px;
-    margin-bottom: 7px;
-    margin-right: 6px;
-  }
-  
-  .bottomfont {
-    font-size: small;
-    opacity: 0.5;
-  
-    margin-bottom: 7px;
-    margin: 0px;
-    margin-right: 16px;
-  }
-  
-  /* .bottomcard {
+
+.bottomarrow {
+  height: 17px;
+  width: 17px;
+  margin-bottom: 7px;
+  margin-right: 6px;
+}
+
+.bottomfont {
+  font-size: small;
+  opacity: 0.5;
+
+  margin-bottom: 7px;
+  margin: 0px;
+  margin-right: 16px;
+}
+
+/* .bottomcard {
     padding-top: 7px;
   } */
-  
-  .footer {
-    
-    text-align: center;
-    width: 100%;
+
+.footer {
+  text-align: center;
+  width: 100%;
+}
+
+.footerbg {
+  background-color: #666666;
+  color: white;
+}
+
+.cardheight {
+  min-height: 210px;
+}
+
+.custom_nav {
+  height: 70px;
+  background-color: #000033 !important;
+}
+.header_profile {
+}
+.buger-menu-container {
+  background-color: #0074bb !important;
+  width: 60px;
+  height: 70px;
+  padding: 20px 10px;
+  img {
+    height: 30px;
   }
-  
-  .footerbg {
-    background-color: #666666;
-    color: white;
+}
+.user-header-container {
+  background-color: #0074bb !important;
+  width: 200px;
+  height: 70px;
+  padding: 10px 5px;
+  color: white;
+  img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
   }
-  
-  .cardheight{
-      min-height: 210px;
+}
+
+.sidebar-custom {
+  height: 100vh;
+}
+
+.dashboard-card {
+  height: 200px;
+  border: 1px solid #0074bb;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 50px;
+}
+
+.dashboard_icon {
+  margin: auto;
+  height: 30px;
+  width: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  img {
+    height: 30px;
+    width: 30px;
   }
+}
+
+
+.job-card-icon{
+  height: 16px;
+}

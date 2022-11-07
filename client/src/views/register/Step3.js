@@ -1,9 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-const Step3 = () => {
-    const history = useNavigate()
+import { useHistory } from "react-router-dom";
+const Step3 = ({handleStep, handleDataChange, register_data }) => {
+    const history = useHistory()
     const handleSubmit = ()=>{
-        history("/login")
+        history.push("/login")
     }   
   return (
     <div className="container">
@@ -13,44 +13,51 @@ const Step3 = () => {
       <div className="row justify-content-center">
         <div className="col-sm-10">
           <div>
-            <small className="text-primary">STEP 3 OF 3</small>
+            {/* <small className="text-primary">STEP 3 OF 3</small> */}
           </div>
           <div className="my-3">
             <h4 className="text-primary">Contact Person</h4>
           </div>
           <div className="row">
             <div className="col-sm-8">
-              <div class="form-floating mb-3">
-                <input
-                  type="email"
-                  class="form-control custom-input"
-                  id="floatingInput"
-                />
+              <div class="mb-3">
                 <label for="floatingInput">Name</label>
-              </div>
-              <div class="form-floating mb-3">
                 <input
                   type="email"
-                  class="form-control custom-input"
+                  class="form-control"
                   id="floatingInput"
+                  value={register_data.name}
+                  onChange={(e)=> handleDataChange(e, "name")}
                 />
+              </div>
+              <div class=" mb-3">
                 <label for="floatingInput">Family Name</label>
-              </div>
-              <div class="form-floating mb-3">
                 <input
                   type="email"
-                  class="form-control custom-input"
+                  class="form-control"
                   id="floatingInput"
+                  value={register_data.family_name}
+                  onChange={(e)=> handleDataChange(e, "family_name")}
                 />
+              </div>
+              <div class="mb-3">
                 <label for="floatingInput">Email</label>
-              </div>
-              <div class="form-floating mb-3">
                 <input
                   type="email"
-                  class="form-control custom-input"
+                  class="form-control"
                   id="floatingInput"
+                  value={register_data.email}
+
                 />
+              </div>
+              <div class=" mb-3">
                 <label for="floatingInput">Mobile Number</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  value={register_data.mobile}
+                />
               </div>
               <div>
                 <button className="btn btn-primary" onClick={handleSubmit}>Next</button>

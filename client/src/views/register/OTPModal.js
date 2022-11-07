@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import OtpInput from "react18-input-otp";
+import axios from 'axios';
 
 const customStyles = {
   content: {
@@ -13,11 +14,31 @@ const customStyles = {
   },
 };
 
-const OTPModal = ({ open, closeModal, isVerified = false ,handleSubmit, handleVerified}) => {
+const OTPModal = ({ open, closeModal, isVerified = false ,handleSubmit, handleVerified,register_data}) => {
   const [otp, setOtp] = useState("");
+  useEffect(()=>{
+    console.log(register_data)
+    if(register_data.mobile){
+      // getOTP()
+    }
+  },[])
   const handleChange = (enteredOtp) => {
     setOtp(enteredOtp);
+   
   };
+
+  const checkOtp = () =>{
+    axios({
+      url:"http://localhost:5000/otp/submit_otp",
+      method:"POST",
+      data:{"otp": otp}
+    })
+    .then(res =>{
+      console.log("test")
+    })
+    handleVerified()
+
+  }
   return (
     <Modal
       isOpen={open}
@@ -33,7 +54,7 @@ const OTPModal = ({ open, closeModal, isVerified = false ,handleSubmit, handleVe
             <small>YOUR NUMBER HAS BEN VERIFIED </small>
           </div>
           <div className="text-center text-gray">
-            <small>+919898989898</small>
+            <small>{register_data.mobile}</small>
           </div>
           <button className="btn btn-primary w-100 my-3" onClick={handleSubmit}>NEXT</button>
         </div>
@@ -45,7 +66,7 @@ const OTPModal = ({ open, closeModal, isVerified = false ,handleSubmit, handleVe
           <p className="text-primary text-center">
             A VERIFICATION CODE HAS BEEN SENT TO{" "}
           </p>
-          <p className="text-dark text-center">+919898989898</p>
+          <p className="text-dark text-center">{register_data.mobile}</p>
           <OtpInput
             //   className="opt-data"
             inputStyle={{
@@ -61,7 +82,7 @@ const OTPModal = ({ open, closeModal, isVerified = false ,handleSubmit, handleVe
             numInputs={6}
             //   separator={<span> -</span>}
           />
-          <button className="btn btn-primary w-100 my-3" onClick={handleVerified}>VERIFY CODE</button>
+          <button className="btn btn-primary w-100 my-3" onClick={checkOtp}>VERIFY CODE</button>
           <div className="text-primary text-center" >
             <small>Resend verification code</small>
           </div>

@@ -1,23 +1,25 @@
 import React from "react";
 import "./style/App.scss";
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./views/Login";
+import Dashboard from "./views/Dashboard/Deshboard";
 
 const LoginComponent = React.lazy(() => import("./views/Login"));
 const RegisterComponent = React.lazy(() => import("./views/register/Register"));
 const HomeComponent = React.lazy(() => import("./views/Home"));
-const ForgetPasswordCOmponent = React.lazy(()=> import("./views/ForgetPassword"))
+const ForgetPasswordComponent = React.lazy(()=> import("./views/ForgetPassword"))
+const DashboardComponent = React.lazy(()=> import("./views/Dashboard/Deshboard"))
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<LoginComponent />} />
-        <Route path="/forget_password" element={<ForgetPasswordCOmponent />} />
+      <Router>
+        <Route exact path="/login" component={LoginComponent } />
+        <Route exact path="/forget_password" component={ForgetPasswordComponent} />
 
-        <Route path="/register" element={<RegisterComponent />} />
-        <Route path="/" element={<HomeComponent />} />
-      </Routes>
-    </BrowserRouter>
+        <Route exact path= "/register" component={RegisterComponent} />
+        <Route exact path= "/" component={HomeComponent} />
+        <Route   path = "/dashboard" component={Dashboard } />
+      </Router>
   );
 }
 

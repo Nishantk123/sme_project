@@ -6,4 +6,4 @@ const otpSchema = new mongoose.Schema({
     updated_at: {type:"date", default:Date.now}
 })
 
-module.exports = mongoose.model("Otp",otpSchema)
+module.exports = mongoose.model("otp",otpSchema)

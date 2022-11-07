@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "../assets/img/logo.png";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
-  const history = useNavigate();
+  const history = useHistory();
 
-  const handleSignUp = () => {
-    history("/register");
+  const handleForgetPassword = () => {
+    history.push("/forget_password");
   };
   return (
     <div className="container-fluid">
@@ -33,7 +33,10 @@ const Login = () => {
               <div className="">
                 <button className="btn btn-primary w-100 my-3">Login</button>
               </div>
-              <div className="my-3 d-flex justify-content-center text-primary cursor_pointer">
+              <div
+                className="my-3 d-flex justify-content-center text-primary cursor_pointer"
+                onClick={handleForgetPassword}
+              >
                 Forgot Password
               </div>
             </div>
