@@ -3,6 +3,10 @@ import Select from "react-select";
 
 const Step2 = ({ handleStep, handleDataChange, register_data }) => {
   const [active_tab, setActiveTab] = useState("COMPANY REGISTRATION");
+  const [is_valid_email, setValidEmail] = useState(false);
+  const [is_pan_valid, setPanValid] = useState(false);
+  const [is_gstn_valid, setGstnValid] = useState(false);
+
   const tabs = [
     "COMPANY REGISTRATION",
     "COMPANY GENERAL PROFILE",
@@ -17,6 +21,42 @@ const Step2 = ({ handleStep, handleDataChange, register_data }) => {
       handleStep(3);
     } else {
       setActiveTab(name);
+    }
+  };
+  const hanldeEmailValidation = (e) => {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    handleDataChange(e, "email");
+    if (e.target.value.match(mailformat)) {
+      setValidEmail(true);
+    } else {
+      console.log("false");
+      setValidEmail(false);
+    }
+  };
+
+  const handlePanValidation = (e) => {
+    console.log("dhajdsjadj");
+    var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+    handleDataChange(e, "pan");
+
+    if (regpan.test(e.target.value)) {
+      setPanValid(true);
+      console.log("valid");
+    } else {
+      setPanValid(false);
+    }
+  };
+  const handleGSTNValidation = (e) => {
+    console.log("sjdasjdnajdsn");
+    let regTest =
+      /^([0][1-9]|[1-2][0-9]|[3][0-8])[A-Z]{3}[ABCFGHLJPTF]{1}[A-Z]{1}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}/;
+    handleDataChange(e, "gstn");
+    if (regTest.test(e.target.value)) {
+      setGstnValid(true);
+      console.log("valid");
+    } else {
+      setGstnValid(false);
+      console.log("valid not");
     }
   };
   const options = [
@@ -50,7 +90,6 @@ const Step2 = ({ handleStep, handleDataChange, register_data }) => {
                 class="form-control mt-1"
                 id="floatingInput"
                 value={register_data.c_address1}
-              
                 onChange={(e) => handleDataChange(e, "c_address1")}
               />
             </div>
@@ -61,7 +100,6 @@ const Step2 = ({ handleStep, handleDataChange, register_data }) => {
                 class="form-control mt-1"
                 id="floatingInput"
                 value={register_data.c_address2}
-
                 onChange={(e) => handleDataChange(e, "c_address2")}
               />
             </div>
@@ -92,14 +130,17 @@ const Step2 = ({ handleStep, handleDataChange, register_data }) => {
                 class="form-control mt-1"
                 id="floatingInput"
                 value={register_data.c_state}
-                
                 onChange={(e) => handleDataChange(e, "c_state")}
               />
             </div>
           </div>
           <div className="col-sm-6">
             <h4>Billing Address</h4>
-            <input type="checkbox"  onChange={(e)=>handleDataChange(e,"same_address")}/> Same As Registered Aaddress
+            <input
+              type="checkbox"
+              onChange={(e) => handleDataChange(e, "same_address")}
+            />{" "}
+            Same As Registered Aaddress
             <div className="">
               <label for="floatingInput">Address line 1</label>
               <input
@@ -127,7 +168,6 @@ const Step2 = ({ handleStep, handleDataChange, register_data }) => {
                 class="form-control mt-1"
                 id="floatingInput"
                 value={register_data.b_landmark}
-
                 onChange={(e) => handleDataChange(e, "b_landmark")}
               />
             </div>
@@ -171,15 +211,29 @@ const Step2 = ({ handleStep, handleDataChange, register_data }) => {
         <h4 className="text-gray">Company Registration</h4>
         <div class=" mb-2">
           <label for="floatingInput">Company Name</label>
-          <input type="email" class="form-control mt-1" id="floatingInput" />
+          <input
+            type="email"
+            class="form-control mt-1"
+            id="floatingInput"
+            placeholder="Please Enter Company Name"
+            onChange={(e) => handleDataChange(e, "company_name")}
+          />
         </div>
         <div class="mb-2">
           <label for="floatingInput">Email</label>
-          <input type="email" class="form-control mt-1" id="floatingInput" />
+          <input
+            type="email"
+            class="form-control mt-1"
+            id="floatingInput"
+            onChange={(e) => hanldeEmailValidation(e)}
+          />
         </div>
         <div class="mb-2">
           <label for="floatingInput">Company Type</label>
-          <select class="form-control mt-1">
+          <select
+            class="form-control mt-1"
+            onChange={(e) => handleDataChange(e, "company_type")}
+          >
             <option value="">select</option>
             <option value="public">Public</option>
             <option value="private">Private</option>
@@ -187,7 +241,12 @@ const Step2 = ({ handleStep, handleDataChange, register_data }) => {
         </div>
         <div class="mb-2">
           <label for="floatingInput">CIN Number(Optional)</label>
-          <input type="email" class="form-control mt-1" id="floatingInput" />
+          <input
+            type="email"
+            class="form-control mt-1"
+            id="floatingInput"
+            onChange={(e) => handleDataChange(e, "cin_number")}
+          />
         </div>
         <div className="mb-2">
           <label for="floatingInput">MSME</label>
@@ -198,16 +257,34 @@ const Step2 = ({ handleStep, handleDataChange, register_data }) => {
         </div>
         <div class="mb-2">
           <label for="floatingInput">PAN Number</label>
-          <input type="email" class="form-control mt-1" id="floatingInput" />
+          <input
+            type="email"
+            class="form-control mt-1"
+            id="floatingInput"
+            onChange={(e) => handlePanValidation(e)}
+          />
+
+          {!is_pan_valid && register_data.pan && (
+            <div className="text-danger">Enter valid PAN number</div>
+          )}
         </div>
         <div class=" mb-2">
           <label for="floatingInput">GST Number</label>
-          <input type="email" class="form-control mt-1" id="floatingInput" />
+          <input
+            type="email"
+            class="form-control mt-1"
+            id="floatingInput"
+            onChange={(e) => handleGSTNValidation(e)}
+          />
+          {!is_gstn_valid && register_data.gstn && (
+            <div className="text-danger">Enter valid GSTN number</div>
+          )}
         </div>
         <div>
           <button
             className="btn btn-primary"
             onClick={() => handleNext("COMPANY ADDRESS")}
+            disabled={!is_gstn_valid||is_pan_valid||is_valid_email}
           >
             Next
           </button>
